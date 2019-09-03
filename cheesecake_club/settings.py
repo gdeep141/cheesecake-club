@@ -122,7 +122,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Full path to directory where django should store uploaded files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Public URL of directory (how browser accesses images)
+MEDIA_URL = '/media/'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'  # Where the user is redirected after login
 LOGIN_URL = 'login'  # Default login route when login required
+
