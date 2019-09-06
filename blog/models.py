@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-
+from django.urls import reverse
 
 # each class is a relation in the database
 class Post(models.Model):
@@ -18,3 +18,7 @@ class Post(models.Model):
     # Used to format posts objects when querying database
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        """ Helps django find location to specific post. """
+        return reverse('post-detail', kwargs={'pk' : self.pk})    # returns full path as string
