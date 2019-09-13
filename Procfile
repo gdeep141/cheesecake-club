@@ -1,0 +1,1 @@
+web: gunicorn cheesecake_club.wsgi
